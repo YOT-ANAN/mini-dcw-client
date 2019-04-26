@@ -7,26 +7,12 @@ class VoteList extends Component {
     this.state = {
       Vote: []
     }
-    this.onClickDelete = this.onClickDelete.bind(this);
   }
   componentDidMount() {
     axios.get("http://34.92.22.171:8000/api/members").then(res => {
       console.log(res.data);
       this.setState({ Vote: res.data })
     });
-  }
-  onClickDelete(e) {
-
-    e.preventDefault();
-    axios.delete("http://34.92.22.171:8000/api/members/", {
-      id: this.lengthID,
-
-    }).then(res => {
-      this.setState({
-        Vote: ''
-      })
-    });
-
   }
   render() {
     return (
