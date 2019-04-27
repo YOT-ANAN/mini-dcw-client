@@ -20,8 +20,7 @@ class VoteList extends Component {
         return (
           <div className="card">
             <div className="card-content">
-              <Vote obj={object} key={i} />
-
+              <Vote obj={object} key={i}/>
             </div>
           </div>
         );

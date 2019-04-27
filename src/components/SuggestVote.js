@@ -38,7 +38,7 @@ class SuggestVote extends Component {
       <form>
         <textarea
           className="textarea"
-          placeholder="เสนอเมนู"
+          placeholder="เเนะนำเมนูอาหารที่น่าสนใจ"
           cols="50"
           onChange={this.onChange}
           onKeyUp={this.onKeyup}
