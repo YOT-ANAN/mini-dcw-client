@@ -13,10 +13,9 @@ class Vote extends Component {
     this.onClickDelete = this.onClickDelete.bind(this);
     this.onClickVote = this.onClickVote.bind(this);
   }
-
   onClickDelete(e) {
     e.preventDefault();
-    axios.delete("http://34.92.22.171:8000/api/members/" + this.props.obj.memberID, {
+    axios.delete("https://us-central1-dcw-my-assignment.cloudfunctions.net/api/api/members/" + this.props.obj.memberID, {
     }).then(res => {
       this.setState({
         Vote: ''
@@ -25,7 +24,7 @@ class Vote extends Component {
   }
   onClickVote(e) {
     e.preventDefault();
-    axios.put("http://34.92.22.171:8000/api/members/" + this.props.obj.memberID, {
+    axios.put("https://us-central1-dcw-my-assignment.cloudfunctions.net/api/api/members/" + this.props.obj.memberID, {
       id: this.props.obj.memberID,
       name: this.props.obj.memberName,
       vote: this.props.obj.memberVote

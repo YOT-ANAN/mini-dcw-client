@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from "axios";
 class SuggestVote extends Component {
+  
   constructor(props) {
+    
     super(props);
     this.onChange = this.onChange.bind(this);
     this.onKeyup = this.onKeyup.bind(this);
@@ -11,7 +13,7 @@ class SuggestVote extends Component {
     };
   }
   componentDidMount() {
-    axios.get("http://34.92.22.171:8000/api/members").then(res => {
+    axios.get("https://us-central1-dcw-my-assignment.cloudfunctions.net/api/api/members").then(res => {
       this.lengthID = res.data.length
     });
   }
@@ -23,7 +25,7 @@ class SuggestVote extends Component {
   onKeyup(e) {
     if (e.keyCode === 13&&(e.target.value) !== '') {
       e.preventDefault();
-      axios.post("http://34.92.22.171:8000/api/members", {
+      axios.post("https://us-central1-dcw-my-assignment.cloudfunctions.net/api/api/members", {
         id: this.lengthID,
         name: e.target.value
       }).then(res => {

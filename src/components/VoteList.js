@@ -9,7 +9,7 @@ class VoteList extends Component {
     }
   }
   componentDidMount() {
-    axios.get("http://34.92.22.171:8000/api/members").then(res => {
+    axios.get("https://us-central1-dcw-my-assignment.cloudfunctions.net/api/api/members").then(res => {
       console.log(res.data);
       this.setState({ Vote: res.data })
     });
